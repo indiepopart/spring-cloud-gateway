@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: cart
+
+okta:
+  oauth2:
+    issuer: https://dev-640429.okta.com/oauth2/default
+    audience: api://default
+
+
+pricing:
+  oauth2:
+    client:
+      grantType: client_credentials
+      accessTokenUri: https://dev-640429.okta.com/oauth2/default/v1/token
+      scope: pricing
