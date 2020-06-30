@@ -11,7 +11,7 @@ This repository contains all the code for testing a Spring Cloud Gateway, and di
 
 To install this example, run the following commands:
 ```bash
-git clone https://github.com/indiepopart/spring-gateway.git
+git clone https://github.com/indiepopart/spring-cloud-gateway.git
 ```
 
 ## Create the API Gateway Client Application in Okta
@@ -22,7 +22,7 @@ Setup the client application:
 From the **Applications** page, choose **Add Application**. On the Create New Application page, select **Web**. Set the following values:
 - Name: API Gateway
 - Base URIs: http://localhost:8080/
-- Login redirect URIs: http://localhost:8080/login/oauth2/code/oidc
+- Login redirect URIs: http://localhost:8080/login/oauth2/code/okta
 - Logout redirect URIs: http://localhost:8080
 - Grant type allowed: Authorization Code, Refresh Token
 
