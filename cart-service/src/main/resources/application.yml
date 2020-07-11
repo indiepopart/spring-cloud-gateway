@@ -4,16 +4,24 @@ server:
 spring:
   application:
     name: cart
-
+  security:
+    oauth2:
+      client:
+        registration:
+          cart-client:
+            provider: okta
+            authorization-grant-type: client_credentials
+            scope: pricing
+        provider:
+          okta:
+            issuer-uri: https://dev-640429.okta.com/oauth2/default
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
 okta:
   oauth2:
     issuer: https://dev-640429.okta.com/oauth2/default
     audience: api://default
 
 
-pricing:
-  oauth2:
-    client:
-      grantType: client_credentials
-      accessTokenUri: https://dev-640429.okta.com/oauth2/default/v1/token
-      scope: pricing
