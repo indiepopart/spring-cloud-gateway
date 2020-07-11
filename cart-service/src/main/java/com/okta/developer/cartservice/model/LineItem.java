@@ -1,9 +1,12 @@
 package com.okta.developer.cartservice.model;
 
+import lombok.Data;
+
 import javax.money.MonetaryAmount;
 import javax.persistence.*;
 
 @Entity
+@Data
 public class LineItem {
 
     @Id
@@ -17,35 +20,4 @@ public class LineItem {
     private MonetaryAmount price;
 
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public MonetaryAmount getPrice() {
-        return price;
-    }
-
-    public void setPrice(MonetaryAmount price) {
-        this.price = price;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

@@ -12,7 +12,7 @@ import java.math.RoundingMode;
 
 
 @Service
-public class BasePricingService implements PricingService {
+public class DefaultPricingService implements PricingService {
 
     private final CurrencyUnit USD = Monetary.getCurrency("USD");
 
