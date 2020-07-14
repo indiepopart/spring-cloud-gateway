@@ -6,12 +6,17 @@ spring:
     name: cart
   security:
     oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-640429.okta.com/oauth2/default
       client:
         registration:
-          cart-client:
+          pricing-client:
             provider: okta
             authorization-grant-type: client_credentials
             scope: pricing
+            client-id: client-id
+            client-secret: client-secret
         provider:
           okta:
             issuer-uri: https://dev-640429.okta.com/oauth2/default
@@ -19,9 +24,7 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-okta:
-  oauth2:
-    issuer: https://dev-640429.okta.com/oauth2/default
-    audience: api://default
 
-
+logging:
+  level:
+    org.springframework.security: DEBUG

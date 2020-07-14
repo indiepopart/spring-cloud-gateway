@@ -4,7 +4,6 @@ import com.okta.developer.cartservice.model.Cart;
 import com.okta.developer.cartservice.repository.CartRepository;
 import com.okta.developer.cartservice.service.PricingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -4,7 +4,6 @@ import com.okta.developer.cartservice.model.Cart;
 import com.okta.developer.cartservice.model.LineItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 

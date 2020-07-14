@@ -19,5 +19,4 @@ public class LineItem {
     @Convert(converter=MonetaryAmountConverter.class)
     private MonetaryAmount price;
 
-
 }
