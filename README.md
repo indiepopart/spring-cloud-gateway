@@ -35,6 +35,9 @@ From the **Applications** page, choose **Add Application**. On the Create New Ap
 
 Copy the **ClientId** and **ClientSecret**.
 
+Create a custom scope to restrict what the `cart-service` accessToken can access. From the menu bar select **API** -> **Authorization Servers**. Edit the authorization server by clicking on the edit pencil, then click **Scopes** -> **Add Scope**. Fill out the name field with `pricing` and press Create.
+
+
 ## Run the applications with Maven
 
 Run `eureka`:
@@ -58,8 +61,8 @@ Run `cart-service`:
 
 ```shell
 cd spring-gateway/cart-service
-PRICING_OAUTH2_CLIENT_CLIENTID={serviceClientId} \
-PRICING_OAUTH2_CLIENT_CLIENTSECRET={serviceClientSecret} \
+SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_PRICINGCLIENT_CLIENTID={serviceClientId} \
+SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_PRICINGCLIENT_CLIENTSECRET={serviceClientSecret} \
 ./mvnw spring-boot:run
 ```
 
@@ -75,9 +78,10 @@ Got to http://localhost:8080/greeting and login with Okta.
 Copy the accessToken and send a create cart request through the gateway using curl:
 
 ```shell
+export ACCESS_TOKEN={accessToken}
 curl -v\
   -d '{"customerId": "uijoon@mail.com", "lineItems": [{ "productName": "jeans", "quantity": 1}]}' \
-  -H "Authorization: Bearer {accessToken}" \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   http://localhost:8080/cart

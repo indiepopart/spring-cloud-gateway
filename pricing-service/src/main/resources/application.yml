@@ -10,3 +10,8 @@ okta:
   oauth2:
     issuer: https://dev-640429.okta.com/oauth2/default
     audience: api://default
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG

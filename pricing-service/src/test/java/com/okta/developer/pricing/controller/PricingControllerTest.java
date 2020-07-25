@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 
 import javax.money.Monetary;
@@ -55,7 +56,7 @@ public class PricingControllerTest {
 
 
         this.mvc.perform(post("/pricing/price").accept(MediaType.APPLICATION_JSON)
-                .with(jwt())
+                .with(jwt().authorities(new SimpleGrantedAuthority("SCOPE_pricing")))
                 .content(objectMapper.writeValueAsString(cart))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
