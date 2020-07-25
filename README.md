@@ -1,6 +1,6 @@
 # Tutorial: Spring Cloud Gateway OAuth2 Patterns
 
-This repository contains all the code for testing a Spring Cloud Gateway, and different OAuth2 patterns with Okta as authorization server.
+This repository contains all the code for testing a Spring Cloud Gateway, and OAuth2 patterns code flow, token relay and client credentials grant, with Okta as authorization server.
 
 **Prerequisites:**
 
@@ -52,8 +52,8 @@ Run `api-gateway`:
 ```shell
 cd spring-gateway/api-gateway
 OKTA_OAUTH2_ISSUER={yourOktaIssuer} \
-OKTA_OAUTH2_CLIENT_ID={yourOktaClientId} \
-OKTA_OAUTH2_CLIENT_SECRET={yourOktaClientSecret} \
+OKTA_OAUTH2_CLIENT_ID={clientId} \
+OKTA_OAUTH2_CLIENT_SECRET={clientSecret} \
 ./mvnw spring-boot:run
 ```
 
